@@ -1,0 +1,55 @@
+
+// _typography.scss - 강사는 typography에 배치하나 component에 넣어도 됨. 내가 정리하고 구분하기 편하면 ok. 하지만 이구간은 typography 속성이 많아서 좀 더 직관적으로 타이포그래피로 분류해서 정리한다고 함.
+.heading-primary{
+    color:#fff;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+       &--main {
+            display: block;
+            font-size: 6rem;
+            letter-spacing: 3.5rem;
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        }
+       &--sub {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1.75rem;    
+            animation: moveInRight 1s ease-out;
+            backface-visibility: hidden;
+       }
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: .2rem;
+    transition: all .2s;
+
+    //상단에 display가 inline일 경우 실패, inline-block만 웹킷을 먹음 참고 **
+    &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: .5rem 1rem 2rem rgba($color-black, 0.2); 
+        // color:blue;
+    }
+}  
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}

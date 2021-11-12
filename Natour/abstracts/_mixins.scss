@@ -1,0 +1,8 @@
+@mixin clearfix {
+    &::after {
+        content: ""; //이걸 안하면 pseudo가 나타나지 않아요.
+        display: table;
+        clear: both;
+
+    }
+}
